@@ -2,7 +2,7 @@ import Mathlib
 
 /--
 PROBLEM:
-Find the least positive integer $n$ such that no matter how $10^{n}$ is expressed as the product of any two positive integers, at least one of these two integers contains the digit $0$.
+Find the least positive integer $n$ such  $0$.
 -/
 theorem AIME_Number_Theory_710 (P Q : ℕ → Prop) (hQ : ∀ n, Q n = ∃ b, 0 < n / 10 ^ b ∧ n / 10 ^ b % 10 = 0) (hP : ∀ n, P n = ∀ a b, a ≤ b → a * b = 10 ^ n → Q a ∨ Q b) : IsLeast { n : ℕ | 0 < n ∧ P n } 8 := by
   -- If a factor of $10^{n}$ has a $2$ and a $5$ in its prime factorization, then that factor will end in a $0$.
